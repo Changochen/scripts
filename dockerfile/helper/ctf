@@ -1,0 +1,11 @@
+#!/bin/bash
+
+myPID=$(pidof socat)
+if [ $myPID ]
+then
+	echo "killing"
+	kill $myPID
+else
+	echo "empty"
+	nohup socat tcp-l:23333,reuseaddr,fork exec:"$1" &
+fi
