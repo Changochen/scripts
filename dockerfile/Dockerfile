@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:19.04
 
 RUN apt-get update && apt-get -y dist-upgrade && \
     apt-get install -y gdb wget socat git zsh vim
